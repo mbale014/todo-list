@@ -5,6 +5,7 @@ function getTodoList() {
 };
 
 function addTodo(todo) {
+    console.log(`Todo named ${todo.title} has been added.`);
     return storage.push(todo);
 };
 

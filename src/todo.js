@@ -68,5 +68,5 @@ const myTodo = createTodo(
     checklist: false}
     );
 
-// export default createTodo;
-// export {toggleChecklist, changePrior}
+export default createTodo;
+export {toggleChecklist, changePrior}
