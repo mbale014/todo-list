@@ -24,6 +24,20 @@ function setChecklist({checklist}) {
     };
 };
 
+// Modify todo item value function
+function toggleChecklist(todo) {
+    return todo.checklist = !todo.checklist
+
+};
+
+function changePrior(todo, newPrior) {
+    return todo.prior = newPrior;
+}
+
+//Create random UUID
+function setRandUUID() {
+    return crypto.randomUUID();
+}
 
 // Todo creator
 const createTodo = function({title, desc, dueDate, prior, notes, checklist}) {
@@ -38,9 +52,12 @@ const createTodo = function({title, desc, dueDate, prior, notes, checklist}) {
         prior: validatedPriority.prior,
         notes: notes,
         checklist: validatedChecklist.checklist,
-    }
+        UUID: setRandUUID(),
+        project: 'default',
+    };
 
     return todo;
 };
 
-export default createTodo;
+// export default createTodo;
+// export {toggleChecklist, changePrior}

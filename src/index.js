@@ -1,3 +1,3 @@
-import createTodo from "./todo.js"
+import {createTodo, toggleChecklist, changePrior} from "./todo.js"
 
 console.log(createTodo())
