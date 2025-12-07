@@ -32,6 +32,12 @@ function getProjects() {
 };
 
 function addProject(name) {
+    // Check if project name already exist to prevent duplicate (case-insensitive)
+    if (projects.find(project => project.name === name)) {
+        console.log(`Project ${name} already exist!`);
+        return;
+    };
+
     const projectLen = getProjects().length;
 
     const newProject = {
