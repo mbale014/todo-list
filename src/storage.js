@@ -1,10 +1,13 @@
 let storage = [];
+let projects = [];
 
+// Todo storing and modifying
 function getTodoList() {
     return [...storage];
 };
 
-function addTodo(todo) {
+function addTodo(todo, projectId) {
+    todo["project"] = projectId;
     console.log(`Todo named ${todo.title} has been added.`);
     return storage.push(todo);
 };
@@ -23,4 +26,37 @@ function removeTodo(id) {
     return storage.splice(index, 1);
 };
 
-export {getTodoList, addTodo, removeTodo} 
+// Projects create and modifying
+function getProjects() {
+    return [...projects];
+};
+
+function addProject(name) {
+    const projectLen = getProjects().length;
+
+    const newProject = {
+        id: `project-${projectLen + 1}`,
+        name: name,
+    };
+
+    console.log(`Project ${newProject.name} has been added`);
+    return projects.push(newProject);
+};
+
+function getProjectIndex(id) {
+    const index = projects.findIndex(project => project.id === id);
+
+    return {
+        index,
+    }
+};
+
+function removeProject(id) {
+    const {index} = getProjectIndex(id);
+
+    return projects.splice(index, 1);
+};
+
+
+
+export {getTodoList, addTodo, removeTodo, getProjects, addProject} 
