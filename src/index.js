@@ -3,7 +3,6 @@ import createTodo, { toggleChecklist, changePrior} from "./todo.js"
 import {getTodoList, addTodo, removeTodo, getProjects, addProject}   from "./storage.js";
 import loadMain from "./main-page.js";
 
-loadMain();
 
 // This to test function on console, later it will be removed
 const myTodo = createTodo({
@@ -31,3 +30,5 @@ console.log(getProjects());
 addTodo(myTodo, 'project-1');
 addTodo(myTodoTwo, 'project-2');
 console.log(getTodoList());
+
+loadMain();

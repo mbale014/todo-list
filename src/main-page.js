@@ -1,3 +1,5 @@
+import {getTodoList}   from "./storage.js";
+
 export default function loadMain() {
     // Fetch css color variable
     const rootElement = document.documentElement;
@@ -35,9 +37,56 @@ export default function loadMain() {
     todaysDateDiv.appendChild(h1Todays);
     todaysDateDiv.appendChild(pDates);
 
+    // Todo dashboard
+    const dashboardDiv = document.createElement('div');
+    dashboardDiv.id = 'home-dashboard'
 
+    const todoList = document.createElement('div');
+    todoList.id = 'todo-list';
+
+    getTodoList().forEach(todo => {
+        const todoRow = document.createElement('div');
+        todoRow.classList.add('todo-row');
+
+        const todoLeftInfo = document.createElement('div');
+
+        const checkboxTodo = document.createElement('input');
+        checkboxTodo.type = 'checkbox';
+        checkboxTodo.name = 'todoIsComplete';
+        checkboxTodo.value = 'isComplete';
+
+        const todoNameSpan = document.createElement('span');
+        const todoName = document.createElement('h3');
+        todoName.textContent = todo.title;
+        todoName.style.fontWeight = 400;
+
+        todoNameSpan.appendChild(todoName);
+
+        todoLeftInfo.appendChild(checkboxTodo);
+        todoLeftInfo.appendChild(todoNameSpan);
+
+        const todoRightNav = document.createElement('div');
+
+        const editBtn = document.createElement('button');
+        editBtn.classList.add('edit-todo');
+        editBtn.textContent = 'Edit';
+        const deleteBtn = document.createElement('button');
+        deleteBtn.classList.add('delete-todo');
+        deleteBtn.textContent = 'delete';
+
+        todoRightNav.appendChild(editBtn);
+        todoRightNav.appendChild(deleteBtn);
+
+        todoRow.appendChild(todoLeftInfo);
+        todoRow.appendChild(todoRightNav);
+
+        todoList.appendChild(todoRow);
+    });
     
+    dashboardDiv.appendChild(todoList);
+
 
     contentDiv.appendChild(todaysDateDiv);
+    contentDiv.appendChild(dashboardDiv);
     containerDiv.appendChild(contentDiv)
 }

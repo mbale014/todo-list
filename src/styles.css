@@ -52,7 +52,7 @@ h1, h2, h3, h4, h5, h6 {
     --primary-color-darken: hsl(209, 39%, 46%);
     --secondary-color: hsl(192, 24%, 96%);
     --grey: hsl(207, 18%, 90%);
-    --white: hsl(0,0, 100%);
+    --white: hsl(0, 0%, 100%);
     --font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     --border-radius: 10px;
 
@@ -149,4 +149,42 @@ div#container {
 #content {
     grid-column: span 1;
     background-color: var(--secondary-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#home-dashboard {
+    padding: 3em;
+    width: 85%;
+    height: 65%;
+    border: 2px solid var(--grey);
+    border-radius: var(--border-radius);
+    background-color: var(--white);
+}
+
+#todo-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.todo-row {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    border: transparent;
+    border-bottom: 2px solid var(--grey);
+    padding: 1em;
+}
+
+.todo-row:hover {
+    border: 2px solid var(--grey);
+    border-radius: var(--border-radius);
+}
+
+.todo-row > div {
+    display: flex;
+    gap: 1rem
 }
