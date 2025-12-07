@@ -5,6 +5,8 @@ export default function loadMain() {
         existingContent.remove();
     };
 
+    const containerDiv = document.getElementById('container');
+
     const contentDiv = document.createElement('div');
     contentDiv.id = 'content';
 
@@ -25,5 +27,5 @@ export default function loadMain() {
     
 
     contentDiv.appendChild(todaysDateDiv);
-    document.body.appendChild(contentDiv)
+    containerDiv.appendChild(contentDiv)
 }

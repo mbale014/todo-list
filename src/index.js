@@ -1,3 +1,4 @@
+import "./styles.css";
 import createTodo, { toggleChecklist, changePrior} from "./todo.js"
 import {getTodoList, addTodo, removeTodo, getProjects, addProject}   from "./storage.js";
 import loadMain from "./main-page.js";
