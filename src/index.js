@@ -1,7 +1,17 @@
 import "./styles.css";
 import createTodo, { toggleChecklist, changePrior} from "./todo.js"
 import {getTodoList, addTodo, removeTodo, getProjects, addProject}   from "./storage.js";
+import addTodoDialog from "./add-new-todo.js";
 import loadMain from "./main-page.js";
+
+
+addTodoDialog();
+const dialogNew = document.getElementById('add-todo-dialog');
+const showBtn = document.querySelector('#new-list button');
+
+showBtn.addEventListener('click', () => {
+    dialogNew.showModal();
+})
 
 
 // This to test function on console, later it will be removed
