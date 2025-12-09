@@ -5,15 +5,6 @@ import addTodoDialog from "./add-new-todo.js";
 import loadMain from "./main-page.js";
 
 
-addTodoDialog();
-const dialogNew = document.getElementById('add-todo-dialog');
-const showBtn = document.querySelector('#new-list button');
-
-showBtn.addEventListener('click', () => {
-    dialogNew.showModal();
-})
-
-
 // This to test function on console, later it will be removed
 const myTodo = createTodo({
     title:'hello world',
@@ -41,5 +32,14 @@ addTodo(myTodo, 'project-1');
 addTodo(myTodoTwo, 'project-2');
 console.log(getTodoList());
 
+
 // init page
 loadMain();
+
+addTodoDialog(getProjects);
+const dialogNew = document.getElementById('add-todo-dialog');
+const showBtn = document.querySelector('#new-list button');
+
+showBtn.addEventListener('click', () => {
+    dialogNew.showModal();
+})
