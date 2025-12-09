@@ -188,3 +188,16 @@ div#container {
     display: flex;
     gap: 1rem
 }
+
+.todo-row button {
+  border: transparent;
+  background-color: transparent;
+}
+
+.todo-row button:hover {
+  cursor: pointer;
+}
+
+.todo-row svg {
+  fill: grey;
+}

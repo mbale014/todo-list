@@ -31,4 +31,5 @@ addTodo(myTodo, 'project-1');
 addTodo(myTodoTwo, 'project-2');
 console.log(getTodoList());
 
+// init page
 loadMain();
